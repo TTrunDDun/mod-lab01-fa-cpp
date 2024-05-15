@@ -1,22 +1,21 @@
 // Copyright 2022 UNN-IASR
-// Copyright 2022 UNN-IASR
 #include "fun.h"
 #include <string>
 #include <cctype>
 #include <sstream>
-#include <iostream>
-#include <math.h>
 #include <cstring>
 #include <stdio.h>
+#include <math.h>
+#include <iostream>
 
 
-unsigned int faStr1(const char* str) {
+unsigned int faStr1(const char* str){
     int Quantity = 0;
     bool Theword = false;
     bool WNumb = false;
-    for (int i = 1; i < strlen(str); i++) {
-        if (i != 1 && str[i] == ' ' && Theword == true) {
-            if (WNumb == false) {
+    for (int i = 1; i < strlen(str); i++){
+        if (i != 1 && str[i] == ' ' && Theword == true){
+            if (WNumb == false){
                 Quantity++;
             }
             Theword = false;
@@ -27,7 +26,7 @@ unsigned int faStr1(const char* str) {
             Theword = true;
         }
         else if (str[i] != ' '){
-            if (i == strlen(str) - 1 && WNumb == false) {
+            if (i == strlen(str) - 1 && WNumb == false){
                 Quantity++;
             }
             Theword = true;
@@ -44,7 +43,7 @@ unsigned int faStr2(const char* str){
     while (String >> Theword){
         if (isupper(Theword[0]) && !Theword.empty()){
             bool correct = true;
-            for (size_t i = 1; i < Theword.length(); i++) {
+            for (size_t i = 1; i < Theword.length(); i++){
                 if (!isspace(Theword[i]) && !islower(Theword[i])){
                     correct = false;
                     break;
@@ -60,7 +59,7 @@ unsigned int faStr2(const char* str){
     return Quantity;
 }
 
-unsigned int faStr3(const char* str) {
+unsigned int faStr3(const char* str){
     std::istringstream String(str);
     std::string Theword;
     int ElementsQuantity = 0;
