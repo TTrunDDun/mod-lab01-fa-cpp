@@ -20,17 +20,15 @@ unsigned int faStr1(const char* str) {
             }
             Theword = false;
             WNumb = false;
-        }else
-            if (str[i] >= '0' && str[i] <= '9') {
+        } else if (str[i] >= '0' && str[i] <= '9') {
             WNumb = true;
             Theword = true;
-            }else
-                if (str[i] != ' ') {
+            } else if (str[i] != ' ') {
                     if (i == strlen(str) - 1 && WNumb == false) {
                         Quantity++;
                     }
                     Theword = true;
-                }
+            }
     }
     return Quantity;
 }
